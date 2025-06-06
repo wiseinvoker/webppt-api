@@ -26,7 +26,11 @@ app.post("/api/slides", async (req, res) => {
 
 app.get("/api/slides", async (req, res) => {
   try {
-    const slides = await Slide.findAll();
+    const slides = await Slide.findAll({
+      order: [
+            ['id', 'ASC'],
+        ],
+    });
     res.json(slides);
   } catch (error) {
     res.status(400).json({ error: "Error fetching slides." });
@@ -78,8 +82,7 @@ app.delete("/api/slides/:id", async (req, res) => {
   }
 });
 
-// Comment out due to vercel deploy
-// // Start the server
+// Should be commented out when vercel deploy
 // app.listen(5000, () => {
 //   console.log('Server running on http://localhost:5000');
 // });
