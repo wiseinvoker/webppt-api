@@ -1,7 +1,6 @@
 // backend/server.js
 const express = require("express");
-// const { Slide } = require("./models/slide");
-const { Slide, sequelize, syncDatabase } = require('./models/slide');
+const { Slide, sequelize, syncDatabase } = require('../models/slide');
 const cors = require('cors');
 
 const app = express();
@@ -83,3 +82,6 @@ app.delete("/api/slides/:id", async (req, res) => {
 app.listen(5000, () => {
   console.log('Server running on http://localhost:5000');
 });
+
+// Export as Vercel handler
+module.exports = app;
