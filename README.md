@@ -47,8 +47,6 @@ npx sequelize-cli db:migrate
 DATABASE_URL=postgres://localhost:6543/postgres
 ```
 
-> SQLite database file will be created at `src/db/database.sqlite`
-
 ## ▶️ Running the Server
 
 ### Start development server:
