@@ -1,14 +1,11 @@
 // backend/models/slide.js
 const { Sequelize, DataTypes } = require('sequelize');
 const fs = require('fs');
-require('dotenv').config(); // Ensure this is loaded for DATABASE_URL
-
-console.log('Using DB URL:', process.env.DATABASE_URL);
+require('dotenv').config();
 
 // Connect to Supabase PostgreSQL
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
-  protocol: 'postgres',
   dialectOptions: {
     ssl: {
       require: true,
@@ -29,7 +26,7 @@ const Slide = sequelize.define('Slide', {
   },
   layout: {
     type: DataTypes.STRING,
-    defaultValue: 'default', // Can be 'default', 'image', etc.
+    defaultValue: 'default',
   },
 });
 
