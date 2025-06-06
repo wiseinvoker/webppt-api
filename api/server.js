@@ -78,10 +78,11 @@ app.delete("/api/slides/:id", async (req, res) => {
   }
 });
 
-// Start the server
-app.listen(5000, () => {
-  console.log('Server running on http://localhost:5000');
-});
+// Comment out due to vercel deploy
+// // Start the server
+// app.listen(5000, () => {
+//   console.log('Server running on http://localhost:5000');
+// });
 
 // Export as Vercel handler
 module.exports = app;
